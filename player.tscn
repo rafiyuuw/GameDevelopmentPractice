@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqecxsv088ja5"]
+
+[ext_resource type="PackedScene" uid="uid://ctt0ba7aeywh6" path="res://levelRoot.tscn" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cwqjq4d1ruoyi" path="res://character_body_2d.tscn" id="2_i3pqv"]
+
+[node name="Node2D" type="Node2D" unique_id=821379217]
+
+[node name="levelRoot" parent="." unique_id=736362856 instance=ExtResource("1_onrkg")]
+
+[node name="CharacterBody2D" parent="." unique_id=1582429492 instance=ExtResource("2_i3pqv")]
+position = Vector2(94, 96)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=47624692]
