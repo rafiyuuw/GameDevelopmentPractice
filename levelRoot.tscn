@@ -659,11 +659,11 @@ texture = ExtResource("1_e8f7f")
 5:11/0 = 0
 6:11/0 = 0
 7:11/0 = 0
-7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8631277, -8, 8, -8, 8, 3.045765, 7.025567, 8, -7.269229, 8)
 8:11/0 = 0
-8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7.269229, 6.064538, -6.9122515, 8, -8, 8, 8, -8, 8)
 9:11/0 = 0
-9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.9676647, 0.20305109, -5.888482, 3.614309, -2.802105, 6.0509224, -0.20305157, 6.1321425, 5.969702, 7.188008, 6.2945824, 6.8631268, 8, -8, 8)
 10:11/0 = 0
 11:11/0 = 0
 12:11/0 = 0
@@ -682,7 +682,7 @@ texture = ExtResource("1_e8f7f")
 5:12/0 = 0
 6:12/0 = 0
 7:12/0 = 0
-7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8631277, -8, 7.1067886, -8, 7.025567, 8, -7.269229, 8)
 8:12/0 = 0
 9:12/0 = 0
 9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -706,7 +706,7 @@ texture = ExtResource("1_e8f7f")
 7:13/0 = 0
 7:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:13/0 = 0
-8:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7.025567, 8, -7.106788, 8, 8, -8, 8)
 9:13/0 = 0
 9:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:13/0 = 0
@@ -1717,7 +1717,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxn2s"]
-size = Vector2(13, 8)
+size = Vector2(17, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7p44"]
 atlas = ExtResource("3_1kgxy")
@@ -1747,7 +1747,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lerhs"]
-size = Vector2(14, 15)
+size = Vector2(19, 17)
 
 [node name="Node2D" type="Node2D" unique_id=736362856]
 script = ExtResource("1_jnusg")
@@ -1803,7 +1803,7 @@ sprite_frames = SubResource("SpriteFrames_d7p44")
 frame_progress = 0.011184988
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1524415456]
-position = Vector2(372.5, 83)
+position = Vector2(372.5, 83.5)
 shape = SubResource("RectangleShape2D_hxn2s")
 
 [node name="Door" type="Area2D" parent="." unique_id=703386077]
@@ -1817,7 +1817,7 @@ sprite_frames = SubResource("SpriteFrames_hxn2s")
 animation = &"Open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1099676680]
-position = Vector2(0, 0.5)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_lerhs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=737568815]
