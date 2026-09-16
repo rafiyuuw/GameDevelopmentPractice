@@ -60,7 +60,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b26j0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lhvu3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -88,7 +88,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ct3r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 5.0
 }]
@@ -97,14 +97,14 @@ animations = [{
 radius = 6.0
 height = 12.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1582429492]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1582429492 groups=["player"]]
 script = ExtResource("1_44cfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1045730638]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lhvu3")
 animation = &"walk_left"
-frame_progress = 0.8098556
+frame_progress = 0.5126159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=268772684]
 position = Vector2(0, 1)
@@ -112,6 +112,6 @@ shape = SubResource("CapsuleShape2D_44cfe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=767884741]
 position = Vector2(1, 1)
-zoom = Vector2(4, 4)
+zoom = Vector2(5.5, 5.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0

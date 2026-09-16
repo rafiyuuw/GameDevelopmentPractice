@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -250.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
@@ -13,11 +13,14 @@ var has_key: bool = false
 var is_invincible: bool = false # Variabel penanda kebal/blinking
 
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
 
-	# Jika sedang blinking/invincible, kunci gerakan dan gravitasi agar melayang
+	# Jika sedang blinking/invincible, kunci gerakan
 	if is_invincible:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -39,16 +42,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	update_animation(direction)
+	
+	# PASTI KAN move_and_slide() DIPANGGIL DULUAN
 	move_and_slide()
 	
-	# Deteksi tabrakan
+	# Deteksi tabrakan DIPERIKSA SETELAH move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider:
-			if collider.name == "obsta":
+			# Cek jika collider ada di group "enemy" ATAU nama nodenya mengandung kata "Enemy" / "enemy" / "obsta"
+			if collider.is_in_group("enemy") or "enemy" in collider.name.to_lower() or collider.name == "obsta":
 				die()
+				break # Keluar dari loop setelah mati
 			elif collider.name == "JumpPad":
 				velocity.y = -500.0
 				var pad_sprite = collider.get_node_or_null("AnimatedSprite2D")

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c8pw1k1es5yje" path="res://kenney_1-bit-platformer-pack/Tilemap/monochrome_tilemap_transparent_packed.png" id="3_1kgxy"]
 [ext_resource type="Script" uid="uid://bccpv2ers0873" path="res://key.gd" id="5_v2r6d"]
 [ext_resource type="Script" uid="uid://cpmqin0kjwi8u" path="res://door.gd" id="6_xqdj5"]
+[ext_resource type="PackedScene" uid="uid://dkpdhqm5rngx3" path="res://enemy.tscn" id="8_65qo4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1wlg"]
 texture = ExtResource("1_e8f7f")
@@ -1686,7 +1687,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnusg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bounce",
 "speed": 3.0
 }]
@@ -1711,7 +1712,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q6ha7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1733,7 +1734,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d7p44")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Closed",
 "speed": 5.0
 }, {
@@ -1741,7 +1742,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hxn2s")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Open",
 "speed": 5.0
 }]
@@ -1771,6 +1772,9 @@ tile_set = SubResource("TileSet_jnusg")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAABAA4AAAADAAkAAAACAA4AAAADAAkAAAADAA4AAAADAAkAAAAEAA4AAAADAAkAAAAFAA4AAAADAAkAAAAGAA4AAAADAAkAAAAHAA4AAAADAAkAAAAIAA4AAAADAAkAAAAJAA4AAAADAAkAAAAKAA4AAAADAAkAAAALAA4AAAADAAkAAAAMAA4AAAADAAkAAAANAA4AAAADAAkAAAAOAA4AAAADAAkAAAAPAA4AAAADAAkAAAAQAA4AAAADAAkAAAARAA4AAAADAAkAAAASAA4AAAADAAkAAAATAA4AAAADAAkAAAAUAA4AAAADAAkAAAAMAAoAAAAGAAgAAAAVAA4AAAADAAkAAAAXAA4AAAADAAkAAAAWAA4AAAADAAkAAAAbAAgAAAADAAkAAAA=")
 tile_set = SubResource("TileSet_x1wlg")
+
+[node name="enemy" parent="." unique_id=764546850 instance=ExtResource("8_65qo4")]
+position = Vector2(325, 184)
 
 [node name="CharacterBody2D" parent="." unique_id=1582429492 instance=ExtResource("2_x1wlg")]
 position = Vector2(122, 78)

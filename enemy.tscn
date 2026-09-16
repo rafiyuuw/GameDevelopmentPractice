@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dkpdhqm5rngx3"]
+
+[ext_resource type="Script" uid="uid://ccdcbugummnha" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bpw6mdl13feik" path="res://kenney_1-bit-platformer-pack/Tilemap/flip.png" id="1_7k104"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("1_7k104")
+region = Rect2(304, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
+atlas = ExtResource("1_7k104")
+region = Rect2(288, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
+atlas = ExtResource("1_7k104")
+region = Rect2(272, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
+atlas = ExtResource("1_7k104")
+region = Rect2(256, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnt2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epg4t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
+radius = 7.0
+height = 16.0
+
+[node name="enemy" type="Node2D" unique_id=764546850]
+
+[node name="enemy" type="CharacterBody2D" parent="." unique_id=1089001541]
+texture_filter = 1
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy" unique_id=1216359006]
+sprite_frames = SubResource("SpriteFrames_cnt2w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=1776954257]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qi2p4")
+
+[node name="RayCast2D" type="RayCast2D" parent="enemy" unique_id=329464874]
+target_position = Vector2(-32, 0)
