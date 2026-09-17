@@ -4,9 +4,15 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -250.0
 
+# Offset horizontal untuk respawn di checkpoint Door 1 (bisa diatur lewat Inspector)
+@export var respawn_offset_x: float = 32.0 
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var spawn_position: Vector2 = global_position # Simpan posisi spawn awal
+
+# Variabel Checkpoint Terbaru (Default ke spawn_position)
+@onready var current_checkpoint: Vector2 = global_position
 
 var is_dead: bool = false
 var has_key: bool = false
@@ -82,7 +88,14 @@ func die() -> void:
 
 
 func respawn() -> void:
-	global_position = spawn_position
+	# Tentukan posisi respawn dasar
+	var final_respawn_pos = current_checkpoint
+	
+	# Jika respawn di checkpoint (Door 1), geser posisi player ke kanan
+	if current_checkpoint != spawn_position:
+		final_respawn_pos.x += respawn_offset_x
+
+	global_position = final_respawn_pos
 	velocity = Vector2.ZERO
 	is_dead = false
 	has_key = false
